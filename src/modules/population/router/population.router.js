@@ -17,8 +17,7 @@ router.get('/identification',authenticate,autherize('admin','technical'),asyncHa
 router.put('/updatePopulation/:id',authenticate,autherize('admin'),getTextFileUploadMiddleware(),validate(updatePopulationSchema,updatePopulationQuery), asyncHandler(updatePopulation));
 router.post('/identificationByDNA',authenticate,autherize('admin','technical'),getTextFileUploadMiddleware(),asyncHandler(identificationByDNA))
 /////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////test////////////////////////////////
+/////////////////////////////////test////////////////////////////////
 router.post('/adddpopulation',authenticate,autherize('technical'),getTextFileUploadMiddleware(),validate(AddPopulationnSchema,AddPopulationnlQuery), asyncHandler(adddPopulation));
 router.get('/EisaAPI',asyncHandler(getAllPopulationDecrypted))
 
