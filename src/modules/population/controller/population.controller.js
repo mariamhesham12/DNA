@@ -1005,7 +1005,6 @@ export const getAllPopulationDecrypted = async (req, res, next) => {
         entry.DNA_sequence = 'Decryption failed';
       }
     });
-
     res.status(200).json({ message: 'Population fetched successfully', statusCode: 200, population });
   } catch (error) {
     console.error('Error fetching population data:', error);
