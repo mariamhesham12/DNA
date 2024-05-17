@@ -982,10 +982,9 @@ const IV = Buffer.from('0123456789abcdef');
 
 export const getAllPopulationDecrypted = async (req, res, next) => {
   try {
-    // Ensure encryption key is exactly 32 bytes
+    // Ensure encryption key is exactly 32 byte
     const ENCRYPTION_KEY = crypto.createHash('sha256').update(process.env.ENCRYPTION_KEY).digest('base64').substr(0, 32);
     const IV = Buffer.from('0123456789abcdef');
-
     // Fetch all population data
     let population = await populationModel.find({}, '-__v');
 
